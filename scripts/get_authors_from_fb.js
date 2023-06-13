@@ -2,7 +2,13 @@ db.collection("artistas")
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            createCards(doc.data().Imagem, doc.data().Nome, doc.data().Desc)
+            createCards(
+                doc.data().Imagem,
+                doc.data().Nome,
+                doc.data().Desc,
+                doc.data().data_de_nascimento,
+                doc.data().data_de_obito
+            )
         });
     })
     .catch((error) => {
@@ -11,7 +17,7 @@ db.collection("artistas")
         console.log(`Status ${errorCode}: ${errorMessage}`);
     });
 
-function createCards(imagem, nome, desc) {
+function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
     var element = document.getElementById("artistas")
 
     var card_article = document.createElement("article");
