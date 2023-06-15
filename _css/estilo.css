@@ -120,7 +120,11 @@
 }
 /* SOBRE */
 .sobre { color: var(--primeira-cor); background: var(--segunda-cor); padding: 3% 4%;}
-.sobre img {margin-right: 3em;}
+.sobre img {
+  margin-right: 5em;
+  margin-left: -2em;
+  width: 100%;
+}
 .sobre h3, h3{ text-align: center; font-weight: bold; }
 h3 { color: var(--segunda-cor); }
 /* Artistas */
