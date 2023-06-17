@@ -18,7 +18,7 @@ db.collection("artistas")
     });
 
 function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
-    var element = document.getElementById("cards")
+    var cards = document.getElementById("cards");
 
     var card = document.createElement("div");
     var card_image = document.createElement("div");
@@ -32,6 +32,7 @@ function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
     var card_title = document.createElement("div");
     var card_title_a = document.createElement("a");
     
+    card_title.setAttribute("class", "card-title");
     card_title_a.setAttribute("href", "#");
     card_title_a.setAttribute("class", "toggle-info btn");
 
@@ -44,38 +45,89 @@ function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
     card_title_a.appendChild(card_title_a_span_2);
     card_title.appendChild(card_title_a);
 
+    var card_title_h2 = document.createElement("h2");
+    var card_title_h2_small_1 = document.createElement("small");
+    var card_title_h2_small_2 = document.createElement("small");
+
+    card_title_h2.appendChild(document.createTextNode(nome));
+    card_title_h2_small_1.appendChild(document.createTextNode("Data de Nascimento: " + data_de_nascimento));
+    card_title_h2_small_2.appendChild(document.createTextNode("Data de Óbito: " + data_de_obito));
 
 
+    card_title_h2.appendChild(card_title_h2_small_1);
+    card_title_h2.appendChild(card_title_h2_small_2);
+    card_title.appendChild(card_title_h2);
+    card.appendChild(card_title);
 
+    var card_flap_1 = document.createElement("div");
+    var card_flap_1_description = document.createElement("div");
 
+    card_flap_1.setAttribute("class", "card-flap flap1");
+    card_flap_1_description.setAttribute("class", "card-description");
 
+    card_flap_1_description.appendChild(document.createTextNode(desc));
+    card_flap_1.appendChild(card_flap_1_description);
 
-    
-    var card_article = document.createElement("article");
-    card_article.setAttribute("class", "cards");
+    var card_flap_2 = document.createElement("div");
+    var card_flap_2_actions = document.createElement("div");
+    var card_flap_2_actions_a = document.createElement("a");
 
-    var inner_div = document.createElement("div");
-    inner_div.setAttribute("class", "inner");
+    card_flap_2.setAttribute("class", "card-flap flap2");
+    card_flap_2_actions.setAttribute("class", "card-actions");
+    card_flap_2_actions_a.setAttribute("class", "btn");
+    card_flap_2_actions_a.setAttribute("href", "#");
 
-    var nome_h4 = document.createElement("h4");
-    nome_h4.appendChild(document.createTextNode(nome));
-    inner_div.appendChild(nome_h4);
+    card_flap_2_actions_a.appendChild(document.createTextNode("Favoritar"));
 
-    var desc_div = document.createElement("div");
-    desc_div.setAttribute("class", "descricao");
+    card_flap_2_actions.appendChild(card_flap_2_actions_a);
+    card_flap_2.appendChild(card_flap_2_actions);
+    card_flap_1.appendChild(card_flap_2);
+    card.appendChild(card_flap_1);
 
-    var desc_p = document.createElement("p");
-    desc_p.appendChild(document.createTextNode(desc));
-    desc_div.appendChild(desc_p);
-    inner_div.appendChild(desc_div);
-
-    var botao = document.createElement("button");
-    botao.setAttribute("class", "btn btn-danger");
-    botao.setAttribute("type", "button");
-    botao.appendChild(document.createTextNode("Favoritar"));
-    inner_div.appendChild(botao);
-
-    card_article.appendChild(inner_div);
-
-    element.appendChild(card_article);
+    cards.appendChild(card);
 }
+
+$(document).ready(function(){
+    var zindex = 10;
+    
+    $("div.card").click(function(e){
+      e.preventDefault();
+  
+      var isShowing = false;
+  
+      if ($(this).hasClass("show")) {
+        isShowing = true
+      }
+  
+      if ($("div.cards").hasClass("showing")) {
+        // a card is already in view
+        $("div.card.show")
+          .removeClass("show");
+  
+        if (isShowing) {
+          // this card was showing - reset the grid
+          $("div.cards")
+            .removeClass("showing");
+        } else {
+          // this card isn't showing - get in with it
+          $(this)
+            .css({zIndex: zindex})
+            .addClass("show");
+  
+        }
+  
+        zindex++;
+  
+      } else {
+        // no cards in view
+        $("div.cards")
+          .addClass("showing");
+        $(this)
+          .css({zIndex:zindex})
+          .addClass("show");
+  
+        zindex++;
+      }
+      
+    });
+  });
