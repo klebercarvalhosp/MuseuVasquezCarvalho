@@ -129,18 +129,25 @@
 h3 { color: var(--segunda-cor); }
 /* Artistas */
 .artistas {width: 100%; float:left; text-align: center; padding: 3% 4%;}
-.cards {width: 100%; background-color: var(--quarta-cor); text-align: left; border-radius: 50px; margin-bottom: 3%; height: 60vh;}
-.cards img {border-radius:50px 50px 0 0;}
+.cards {width: 100%; background-color: var(--quarta-cor); text-align: left; border-radius: 50px; margin-bottom: 3%;}
+.cards img {border-radius:50px 50px 0 0; width: 100% ; max-height: 150px; height: auto;}
+.cards button {height: auto;}
 .inner {padding: 7%; text-align: center;}
 .inner a, .inner a:link {font-size: 1.5em; color: var(--segunda-cor); text-decoration: none;}
 .inner h4 {font-size: 1em; color: var(--primeira-cor); margin-top: 2%;}
 .inner p {margin-top: 6%; color: var(--primeira-cor); line-height: 1.5em;}
 .banner {background: var(--segunda-cor);}
+
+/*.cards img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}*/
 @media screen and (min-width: 768px) {
   .cards {width: 49%; float: left; margin-right: 1%;}
   .cards:nth-child(2) {margin-right: 0;}
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1100px) {
   .inner p {font-size: 0.7em;}
   .cards {width: 23%;}
   .cards:nth-child(2) {margin-right: 1%;}
