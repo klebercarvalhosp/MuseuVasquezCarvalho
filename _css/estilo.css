@@ -137,7 +137,7 @@ h3 { color: var(--segunda-cor); }
   max-width: 960px;
   text-align: center;
 }
-.cards.btn {
+.cards a.btn {
   background: #0096a0;
   border-radius: 4px;
   box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
@@ -148,14 +148,14 @@ h3 { color: var(--segunda-cor); }
   text-decoration: none;
   transition: all 0.1s 0s ease-out;
 }
-.cards.no-touch .cards.btn:hover {
+.cards .no-touch a.btn:hover {
   background: #00a2ad;
   box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
   transform: translateY(-2px);
   transition: all 0.25s 0s ease-out;
 }
-.cards.no-touch .cards.btn:active,
-.cards.btn:active {
+.cards .no-touch .cards a.btn:active,
+.cards a.btn:active {
   background: #008a93;
   box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.25);
   transform: translate3d(0, 1px, 0);
@@ -187,7 +187,7 @@ h3 { color: var(--segunda-cor); }
   position: relative;
   z-index: 0;
 }
-.card.card-title .card.toggle-info {
+.card .card-title a.toggle-info {
   border-radius: 32px;
   height: 32px;
   padding: 0;
@@ -196,7 +196,7 @@ h3 { color: var(--segunda-cor); }
   top: 10px;
   width: 32px;
 }
-.card.card-title .card.toggle-info span {
+.card .card-title a.toggle-info span {
   background: #ffffff;
   display: block;
   height: 2px;
@@ -205,22 +205,22 @@ h3 { color: var(--segunda-cor); }
   transition: all 0.15s 0s ease-out;
   width: 12px;
 }
-.card.card-title .card.toggle-info .card.left {
+.card .card-title a.toggle-info span.left {
   right: 14px;
   transform: rotate(45deg);
 }
-.card.card-title .card.toggle-info .card.right {
+.card .card-title a.toggle-info span.right {
   left: 14px;
   transform: rotate(-45deg);
 }
-.card.card-title h2 {
+.card .card-title h2 {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.05em;
   margin: 0;
   padding: 0;
 }
-.card.card-title h2 small {
+.card .card-title h2 small {
   display: block;
   font-size: 18px;
   font-weight: 600;
@@ -264,16 +264,16 @@ h3 { color: var(--segunda-cor); }
   opacity: 1 !important;
   transform: scale(1) !important;
 }
-.card.show .card-title .toggle-info {
+.card.show .card-title a.toggle-info {
   background: #ff6666 !important;
 }
-.card.show .card-title .toggle-info span {
+.card.show .card-title a.toggle-info span {
   top: 15px;
 }
-.card.show .card-title .toggle-info .left {
+.card.show .card-title a.toggle-info span.left {
   right: 10px;
 }
-.card.show .card-title .toggle-info .right {
+.card.show .card-title a.toggle-info span.right {
   left: 10px;
 }
 .card.show .card-flap {
