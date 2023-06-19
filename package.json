@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "firebase": "^9.22.0",
+    "live-server": "^1.2.2"
+  },
+  "scripts" : {
+    "start" : "live-server"
+  }
+}
