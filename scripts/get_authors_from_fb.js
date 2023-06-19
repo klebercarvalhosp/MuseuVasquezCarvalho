@@ -18,41 +18,16 @@ db.collection("artistas")
     });
 
 function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
-    var element = document.getElementById("cards")
+    var element = document.getElementById("artistas")
 
-    var card = document.createElement("div");
-    var card_image = document.createElement("div");
-    var image = document.createElement("img");
-
-    image.setAttribute("src", imagem);
-
-    card_image.appendChild(image);
-    card.appendChild(card_image);
-
-    var card_title = document.createElement("div");
-    var card_title_a = document.createElement("a");
-    
-    card_title_a.setAttribute("href", "#");
-    card_title_a.setAttribute("class", "toggle-info btn");
-
-    var card_title_a_span_1 = document.createElement("span");
-    var card_title_a_span_2 = document.createElement("span");
-    card_title_a_span_1.setAttribute("class", "left");
-    card_title_a_span_2.setAttribute("class", "right");
-
-    card_title_a.appendChild(card_title_a_span_1);
-    card_title_a.appendChild(card_title_a_span_2);
-    card_title.appendChild(card_title_a);
-
-
-
-
-
-
-
-    
     var card_article = document.createElement("article");
     card_article.setAttribute("class", "cards");
+
+    var card_image = document.createElement("img");
+    card_image.setAttribute("src", imagem);
+    card_image.setAttribute("alt", "Foto do Artista");
+    card_image.setAttribute("width", "100%");
+    card_article.appendChild(card_image);
 
     var inner_div = document.createElement("div");
     inner_div.setAttribute("class", "inner");

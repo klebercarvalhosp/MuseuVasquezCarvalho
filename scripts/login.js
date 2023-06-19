@@ -101,7 +101,9 @@ function logarUsuario() {
 function loginUser(email, password) {
     event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(successfulLogin())
+        .then(() => {
+            successfulLogin();
+        })
         .catch((error) => {
             let errorCode = error.code;
             let errorMessage = error.message;
@@ -146,32 +148,6 @@ function treatCredentialErrors(method, errorCode, errorMessage) {
         (
             document
                 .querySelector(".sign-up-container")
-                .getElementsByClassName("password")[0]
-                .value
-        ) = current_password;
-    } else if (errorCode === "auth/email-already-in-use") {
-        let current_email = (
-            document
-                .querySelector(".sign-up-container")
-                .getElementsByClassName("username")
-        )[0].value;
-        let current_password = (
-            document
-                .querySelector(".sign-up-container")
-                .getElementsByClassName("password")
-        )[0].value;
-
-        document.getElementById("signIn").click();
-
-        (
-            document
-                .querySelector(".sign-in-container")
-                .getElementsByClassName("username")[0]
-                .value
-        ) = current_email;
-        (
-            document
-                .querySelector(".sign-in-container")
                 .getElementsByClassName("password")[0]
                 .value
         ) = current_password;
