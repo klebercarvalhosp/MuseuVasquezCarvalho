@@ -1,21 +1,28 @@
-db.collection("artistas")
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            createCards(
-                doc.data().Imagem,
-                doc.data().Nome,
-                doc.data().Desc,
-                doc.data().data_de_nascimento,
-                doc.data().data_de_obito
-            )
+carregarAutores();
+
+function carregarAutores() {
+    db.collection("artistas")
+        .get()
+        .then((querySnapshot) => {
+            var element = document.getElementById("artistas");
+            element.innerHTML = "";
+
+            querySnapshot.forEach((doc) => {
+                createCards(
+                    doc.data().Imagem,
+                    doc.data().Nome,
+                    doc.data().Desc,
+                    doc.data().data_de_nascimento,
+                    doc.data().data_de_obito
+                )
+            });
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(`Status ${errorCode}: ${errorMessage}`);
         });
-    })
-    .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(`Status ${errorCode}: ${errorMessage}`);
-    });
+}
 
 function createCards(imagem, nome, desc, data_de_nascimento, data_de_obito) {
     var element = document.getElementById("artistas")

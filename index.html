@@ -177,6 +177,45 @@
     <section class="artistas" id="artistas">
     </section>
     <section class="caracteristicas">
+        <section id="criar_autores" class="contact" hidden="hidden">
+            <h3><a>CRIAR AUTORES</a></h3>
+            <div class="container">
+
+                <div class="row mt-5">
+                    <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <input type="text" name="name" class="form-control" id="nome_completo"
+                                       placeholder="Nome do Autor"
+                                       required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="name" class="form-control" id="link_imagem"
+                                       placeholder="Link da Imagem"
+                                       required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="data_de_nascimento"
+                                       placeholder="Data de Nascimento" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="data_de_obito"
+                                       placeholder="Data de Óbito" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" id="descricao" name="message" rows="5"
+                                          placeholder="Descrição do autor" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-danger" type="button" onclick="cadastrarAutor()">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="caracteristicas">
         <h3><a name="faleConosco">FALE CONOSCO</a></h3>
         <section id="contact" class="contact">
             <div class="container">
