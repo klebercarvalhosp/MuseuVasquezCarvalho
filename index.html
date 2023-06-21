@@ -172,37 +172,45 @@
     </section>
     <a name="artistas"></a>
     <section class="cardapio_titulo">
-        <h3><strong>ARTISTAS HOMENAGEADOS ZUMBI DOS PALMARES</strong></h3>
+        <h3><strong>ARTISTAS HOMENAGEADOS ZUMBI DOS PALMARES</strong></h3> 
+        <div class="dropdown">
+            <h2>Vizualização</h2>
+            <div class="styled-select">
+              <select id="select" name="select">
+                <option value="favoritos">Favoritos</option>
+                <option value="todos">Todos</option>
+              </select>
+            </div>
+          </div>
     </section>
     <section class="artistas" id="artistas">
-    </section>
-    <section class="caracteristicas">
-        <section id="criar_autores" class="contact" hidden="hidden">
-            <h3><a>CRIAR AUTORES</a></h3>
-            <div class="container">
 
-                <div class="row mt-5">
-                    <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+    </section>
+    <!--<section class="caracteristicas">
+        <section id="criar_autores" class="cont" hidden="hidden">
+            <h3><a>CRIAR AUTORES</a></h3>
+            <div class="cont2">
+                       <div class="m1" data-aos="fade-left">
+                        <form method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <input type="text" name="name" class="form-control" id="nome_completo"
                                        placeholder="Nome do Autor"
                                        required>
                             </div>
-                            <div class="form-group mt-3">
+                            <div class="m2">
                                 <input type="text" name="name" class="form-control" id="link_imagem"
                                        placeholder="Link da Imagem"
                                        required>
                             </div>
-                            <div class="form-group mt-3">
+                            <div class="m3">
                                 <input type="text" class="form-control" name="subject" id="data_de_nascimento"
                                        placeholder="Data de Nascimento" required>
                             </div>
-                            <div class="form-group mt-3">
+                            <div class="m4">
                                 <input type="text" class="form-control" name="subject" id="data_de_obito"
                                        placeholder="Data de Óbito" required>
                             </div>
-                            <div class="form-group mt-3">
+                            <div class="m5">
                                 <textarea class="form-control" id="descricao" name="message" rows="5"
                                           placeholder="Descrição do autor" required></textarea>
                             </div>
@@ -211,10 +219,81 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                
             </div>
         </section>
-    </section>
+    </section>-->
+
+
+    <!--Box Formulario-->
+
+    <section id="criar_autores" class="cont" hidden="hidden">
+    <div class="box-formulario">        
+        
+        <div class="formulario">
+            
+            <div class="box-title">
+              <h1 class="title">Cadastre<span class="subtitle">Autores</span></h1>
+            </div>
+            <form action="#" method="post">
+                     
+                <span>
+                    <input type="text" class="input-hidden" id="nome_completo" name="nome" placeholder="Nome do Autor" autocomplete="off" required=""/>
+                    <label for="nome"> <i class="icon icon-user-outline"></i> </label>
+                </span>
+                <span>
+                    <input type="text" class="input-hidden" id="link_imagem" placeholder="Link da Imagem" autocomplete="off" required=""/>
+                    <label for="email"> <i class="icon icon-mail-3"></i> </label>
+                </span>
+                <span>
+                    <input type="text" class="input-hidden" id="data_de_nascimento" name="assunto" placeholder="Data de Nascimento" autocomplete="off" required=""/>
+                    <label for="assunto"> <i class="icon icon-info"></i> </label>
+                </span>
+                <span>
+                    <input type="text" class="input-hidden" id="data_de_obito" name="assunto" placeholder="Data de Obito" autocomplete="off" required=""/>
+                    <label for="assunto"> <i class="icon icon-info"></i> </label>
+                </span>
+                <span>
+                    <textarea type="text" class="textarea-hidden" id="descricao" name="mensagem" rows="3" placeholder="Descrição" autocomplete="off" required=""></textarea>
+                    <label for="mensagem"> <i class="icon icon-bubble-4"></i> </label>
+                </span>
+                
+
+                <div class="box-btn">
+                     <input type="submit" value="Enviar" class="btn-submit" onclick="cadastrarAutor()">
+                </div>
+            </form>
+        </div>
+    </div><!--Box Formulario--> 
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="caracteristicas">
         <h3><a name="faleConosco">FALE CONOSCO</a></h3>
         <section id="contact" class="contact">
@@ -279,6 +358,14 @@
             </div>
         </section>
     </section>
+
+
+
+
+
+
+
+    
     <footer>
         <table align="center">
             <tr>
