@@ -4,7 +4,6 @@ const container = document.getElementById('container');
 const usernames = document.getElementsByClassName("username");
 const passwords = document.getElementsByClassName("password");
 const emailRecoveryButton = document.getElementById('email-recovery');
-const cadastrarAutorButton = document.getElementById('cadastrar_autor');
 
 for (let username of usernames) {
     username.addEventListener('change', () => {
