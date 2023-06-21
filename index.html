@@ -202,7 +202,7 @@
                 <span>
                     <label for="nome_completo"> <i class="icon icon-user-outline"></i> </label>
                     <input type="text" class="input-hidden" id="nome_completo" name="nome" placeholder="Nome do Autor"
-                           autocomplete="off" required=""/>
+                           autocomplete="off" required maxlength="100"/>
                 </span>
                     <span>
                     <label for="link_imagem"> <i class="icon icon-mail-3"></i> </label>
@@ -211,18 +211,18 @@
                 </span>
                     <span>
                     <label for="data_de_nascimento"> <i class="icon icon-info"></i> </label>
-                    <input type="text" class="input-hidden" id="data_de_nascimento" name="assunto"
+                    <input type="date" class="input-hidden" id="data_de_nascimento" name="assunto"
                            placeholder="Data de Nascimento" autocomplete="off" required=""/>
                 </span>
                     <span>
                     <label for="data_de_obito"> <i class="icon icon-info"></i> </label>
-                    <input type="text" class="input-hidden" id="data_de_obito" name="assunto"
+                    <input type="date" class="input-hidden" id="data_de_obito" name="assunto"
                            placeholder="Data de Obito" autocomplete="off" required=""/>
                 </span>
                     <span>
                     <label for="descricao"> <i class="icon icon-bubble-4"></i> </label>
                     <textarea type="text" class="textarea-hidden" id="descricao" name="mensagem" rows="3"
-                              placeholder="Descrição" autocomplete="off" required=""></textarea>
+                              placeholder="Descrição" autocomplete="off" required maxlength="1000"></textarea>
                 </span>
 
 
@@ -279,7 +279,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="subject" id="subject"
-                                       placeholder="Assunto" required>
+                                       placeholder="Assunto" required />
                             </div>
                             <div class="form-group mt-3">
                   <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required>
